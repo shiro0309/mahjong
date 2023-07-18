@@ -25,8 +25,6 @@ if __name__ == "__main__":
                     all_1.remove(element[0])
                     all_1.remove(element[1])
                     all_1.remove(element[2])
-                    # print("answer:{}".format(answer))
-                    # print("all_1:{}".format(all_1))
                     for element_2 in runs_triples:
                         answer_2 = answer.copy()
                         if (element_2[0] != element_2[1] and all_1.count(element_2[0]) >= 1 and all_1.count(element_2[1]) >= 1 and all_1.count(element_2[2]) >= 1 ) \
@@ -54,8 +52,6 @@ if __name__ == "__main__":
                                             all_4.remove(element_4[0])
                                             all_4.remove(element_4[1])
                                             all_4.remove(element_4[2])
-                                            # print("answer:{}".format(answer_4))
-                                            # print("all_4:{}".format(all_4))
                                             answer_4.append(head)
                                             a = sum(answer_4,[])
                                             a.sort()
