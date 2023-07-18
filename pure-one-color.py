@@ -62,35 +62,4 @@ if __name__ == "__main__":
                                             all_pure_one_color.append(a)
 unique_list = get_unique_list(all_pure_one_color)
 print(unique_list)
-                # for triple_2 in range(triple_1+1,10):
-                #     if all.count(triple_2) >= 3:
-                #         answer_2 = answer.copy()
-                #         all_2 = all_1.copy()
-                #         answer_2.append(triples[triple_2 -1])
-                #         all_2.remove(triple_2)
-                #         all_2.remove(triple_2)
-                #         all_2.remove(triple_2)
-                # for run_1 in runs:
-                #     if all.count(run_1[0]) >= 1 and all.count(run_1[1]) >= 1 and all.count(run_1[1]) >= 1:
-                #         answer_2 = answer.copy()
-                #         all_2 = all_1.copy()
-                        # for triple_3 in range(triple_2+1,10):
-                        #     if all.count(triple_3) >= 3:
-                        #         answer_3 = answer_2.copy()
-                        #         all_3 = all_2.copy()
-                        #         answer_3.append(triples[triple_3 - 1])
-                        #         all_3.remove(triple_3)
-                        #         all_3.remove(triple_3)
-                        #         all_3.remove(triple_3)
-                        #         for triple_4 in range(triple_3+1,10):
-                        #             if all.count(triple_4) >= 3:
-                        #                 answer_4 = answer_3.copy()
-                        #                 all_4 = all_3.copy()
-                        #                 answer_4.append(triples[triple_4 - 1])
-                        #                 all_4.remove(triple_4)
-                        #                 all_4.remove(triple_4)
-                        #                 all_4.remove(triple_4)
-                        #                 print(answer_4)
-                                        
-                           
-        
+   
