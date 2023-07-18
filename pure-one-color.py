@@ -13,26 +13,36 @@ for head in range(1,10):
         for triple_1 in range(1,10):
             answer = []
             if all.count(triple_1) >= 3:
-                answer.append(triple_1)
-                answer.append(triple_1)
-                answer.append(triple_1)
+                answer.append(triples[triple_1 - 1])
+                all_1 = all.copy()
+                all_1.remove(triple_1)
+                all_1.remove(triple_1)
+                all_1.remove(triple_1)
                 for triple_2 in range(triple_1+1,10):
                     if all.count(triple_2) >= 3:
-                        answer.append(triple_2)
-                        answer.append(triple_2)
-                        answer.append(triple_2)
+                        answer_2 = answer.copy()
+                        all_2 = all_1.copy()
+                        answer_2.append(triples[triple_2 -1])
+                        all_2.remove(triple_2)
+                        all_2.remove(triple_2)
+                        all_2.remove(triple_2)
                         for triple_3 in range(triple_2+1,10):
                             if all.count(triple_3) >= 3:
-                                answer.append(triple_3)
-                                answer.append(triple_3)
-                                answer.append(triple_3)
+                                answer_3 = answer_2.copy()
+                                all_3 = all_2.copy()
+                                answer_3.append(triples[triple_3 - 1])
+                                all_3.remove(triple_3)
+                                all_3.remove(triple_3)
+                                all_3.remove(triple_3)
                                 for triple_4 in range(triple_3+1,10):
                                     if all.count(triple_4) >= 3:
-                                        answer.append(triple_4)
-                                        answer.append(triple_4)
-                                        answer.append(triple_4)
-                                        print(answer)
-                                        break
+                                        answer_4 = answer_3.copy()
+                                        all_4 = all_3.copy()
+                                        answer_4.append(triples[triple_4 - 1])
+                                        all_4.remove(triple_4)
+                                        all_4.remove(triple_4)
+                                        all_4.remove(triple_4)
+                                        print(answer_4)
                                         
                            
         
