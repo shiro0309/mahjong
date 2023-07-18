@@ -53,9 +53,16 @@ if __name__ == "__main__":
                                             all_4.remove(element_4[1])
                                             all_4.remove(element_4[2])
                                             answer_4.append(head)
-                                            a = sum(answer_4,[])
-                                            a.sort()
-                                            all_pure_one_color.append(a)
-unique_list = get_unique_list(all_pure_one_color)
-print(unique_list)
-   
+                                            answer_4 = sum(answer_4,[])
+                                            answer_4.sort()
+                                            all_pure_one_color.append(answer_4)
+    # # 七対子
+    import itertools
+    seven_pairs = []
+    for pair in itertools.combinations(heads, 7):
+        pair = sum(list(pair),[])
+        pair.sort()
+        all_pure_one_color.append(pair)
+    unique_list = get_unique_list(all_pure_one_color)
+    print(unique_list)
+    print("総数：{}".format(len(unique_list)))
