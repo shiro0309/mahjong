@@ -14,35 +14,34 @@ eight = 0
 nine = 0
 #######################################################################
 
-# 鳴いている形をすべて合体
-calling = list(itertools.chain.from_iterable(calling))
-# 何メンツ鳴いているか
-calling_num = len(calling)
-print("calling-num:{}".format(calling_num))
-
-# それぞれの枚数で使える数を計算
-one_remain = 4 - calling.count(1) - one
-two_remain = 4 - calling.count(2) - two
-three_remain = 4 - calling.count(3) - three
-four_remain = 4 - calling.count(4) - four
-five_reamin = 4 - calling.count(5) - five
-six_remain = 4 - calling.count(6) - six
-seven_remain = 4 - calling.count(7) - seven
-eight_remain = 4 - calling.count(8) - eight
-nine_remain = 4 - calling.count(9) - nine
-
 def get_unique_list(seq):
     seen = []
     return [x for x in seq if x not in seen and not seen.append(x)]
 if __name__ == "__main__":
+    # 何メンツ鳴いているか
+    calling_num = len(calling)
+    print("calling-num:{}".format(calling_num))
+    # 鳴いている形をすべて合体
+    calling = list(itertools.chain.from_iterable(calling))
+
+    # それぞれの枚数で使える数を計算
+    one_remain = 4 - calling.count(1) - one
+    two_remain = 4 - calling.count(2) - two
+    three_remain = 4 - calling.count(3) - three
+    four_remain = 4 - calling.count(4) - four
+    five_reamin = 4 - calling.count(5) - five
+    six_remain = 4 - calling.count(6) - six
+    seven_remain = 4 - calling.count(7) - seven
+    eight_remain = 4 - calling.count(8) - eight
+    nine_remain = 4 - calling.count(9) - nine
+    print("1:{}枚, 2:{}枚, 3:{}枚, 4:{}枚, 5:{}枚, 6:{}枚, 7:{}枚, 8:{}枚, 9:{}枚".format(one_remain, two_remain, three_remain, four_remain, five_reamin, six_remain, seven_remain, eight_remain, nine_remain))
+
     runs_triples = [[1,2,3],[2,3,4],[3,4,5],[4,5,6],[5,6,7],[6,7,8],[7,8,9],[1,1,1],[2,2,2],[3,3,3],[4,4,4],[5,5,5],[6,6,6],[7,7,7],[8,8,8],[9,9,9]]
     heads = [[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9]]
     all_pure_one_color = []
     # 面子手
     for head in heads:
         all = [1] * one_remain + [2] * two_remain + [3] * three_remain + [4] * four_remain + [5] * five_reamin + [6] * six_remain + [7] * seven_remain + [8] * eight_remain + [9] * nine_remain 
-        print("1:{}枚, 2:{}枚, 3:{}枚, 4:{}枚, 5:{}枚, 6:{}枚, 7:{}枚, 8:{}枚, 9:{}枚".format(one_remain, two_remain, three_remain, four_remain, five_reamin, six_remain, seven_remain, eight_remain, nine_remain))
-        quit()
         if all.count(head[0]) >= 2:
             print("head:{}".format(head))
             all.remove(head[0])
@@ -89,11 +88,13 @@ if __name__ == "__main__":
                                             answer_4.sort()
                                             all_pure_one_color.append(answer_4)
     # 七対子
-    seven_pairs = []
-    for pair in itertools.combinations(heads, 7):
-        pair = sum(list(pair),[])
-        pair.sort()
-        all_pure_one_color.append(pair)
+    if calling_num == 0:
+        seven_pairs = []
+        for pair in itertools.combinations(heads, 7):
+            pair = sum(list(pair),[])
+            pair.sort()
+            all_pure_one_color.append(pair)
+
     unique_list = get_unique_list(all_pure_one_color)
     print(unique_list)
     print("総数：{}".format(len(unique_list)))
